@@ -1,0 +1,78 @@
+/*
+ This Entity was created for RESTFul Scrabble Game Test
+ the executable for this Entity is on LibraryTest.Java
+*/
+import javax.ws.rs.GET;
+//import javax.ws.rs.Path;
+//import javax.ws.rs.core.Response;	
+import java.io.Serializable;
+import javax.persistence.*;
+
+@Entity
+public class Library implements Serializable 
+{
+	
+	char letter;
+	int values;
+	
+	public Library(char letter, int values)
+	{
+		this.letter = letter;
+		this.values = values;
+		
+	}
+	
+	public char getLetter()
+	{
+		return letter;
+		
+	}
+
+	public int getValues()
+	{
+		return values;
+		
+	}
+	
+	
+	public String toString()
+	{
+		
+		return "" + letter + "{" + values + "}";
+		
+	}
+	
+	public boolean equals(Object obj)
+	{
+		Library other;
+		
+		if ( !( obj instanceof Library))
+		{
+			return false;
+		
+		}
+		else{other = (Library) obj;
+			}
+		
+		if(this.letter == other.letter)
+		{
+			return true;
+			
+		}else
+		{
+			return false;
+		}
+	}
+	
+	private boolean letter(String string, char letter2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	//default method
+	public boolean LibraryMethod() 
+    {
+        return true;
+    }
+	
+}

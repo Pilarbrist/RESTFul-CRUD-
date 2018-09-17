@@ -1,0 +1,55 @@
+/*
+  Testing class for Library.java for RESTFUL Scrabble-like board game 
+ */
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class LibraryTest 
+
+{
+    @Test 
+    public void testLibrary() 
+    {
+        int values = 0;
+		char letter = 0;
+		Library classUnderTest = new Library(letter, values);
+        assertTrue("LibraryMethod should return 'true'", classUnderTest.LibraryMethod());
+        
+        Library myLibrary = new Library('a',  3);
+        Library myLibrary2 = new Library('c', 3);
+        Library myLibrary3 = new Library('a', 3);
+        
+        System.out.println("The value of " + myLibrary.getLetter() +  " is "  +  myLibrary.getValues());
+        
+        System.out.println(myLibrary);
+        
+        if(myLibrary.equals(myLibrary2))
+        {
+        	 System.out.println("myLibrary is equal to myLibrary2 ");
+        }
+        else{ System.out.println("myLibrary is NOT equal to myLibrary2 ");
+        }
+        
+        if(myLibrary.equals(myLibrary3))
+        {
+        	 System.out.println("myLibrary is equal to myLibrary3 ");
+        }
+        else{ System.out.println("myLibrary is NOT equal to myLibrary3 ");
+        }
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+}
+
+OUTPUT:
+
+The value of a is 3
+a{3}
+myLibrary is NOT equal to myLibrary2 
+myLibrary is equal to myLibrary3 

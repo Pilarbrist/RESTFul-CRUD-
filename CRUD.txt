@@ -1,0 +1,60 @@
+/*
+ This a sequence of functionalities to create 
+ CRUD on RESTFul with JPA.  
+
+ */
+import org.junit.Test;
+import static org.junit.Assert.*;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+
+public class LibraryTest {
+    @Test public void LibraryMethod2() {
+        Library classUnderTest = new Library();
+        assertTrue("LibraryMethod2 should return 'true'", classUnderTest.someLibraryMethod());
+       
+        
+        
+        /* Create EntityManagerFactory */
+    	EntityManagerFactory emf = Persistence
+    			.createEntityManagerFactory("Library2");
+    	
+    	
+    	/* Create and populate Entity */
+    	Library2 mylibrary2 = new Library2();
+    	mylibrary2.setIdUser(1);
+    	mylibrary2.setletter("a");
+    	mylibrary2.setvalues(2);
+    	
+    	/* Create EntityManager */
+		EntityManager em = emf.createEntityManager();
+    	
+    	/* Persist entity *
+		em.getPlay().begin();
+		em.persist(mylibrary2);
+		em.getPlay().commit();
+    	
+    		/* Retrieve entity */
+		mylibrary2 = em.find(mylibrary2.class, 1);
+		System.out.println(mylibrary2);	
+    	
+		/* Update entity */
+		em.getIdUser().begin();
+		mylibrary2.setIdUser("w3ft");
+		System.out.println("Library after updation :- " + mylibrary2);
+		em.getsetIdUser().commit();
+    
+		/* Remove entity */
+		em.getIdUser().begin();
+		em.remove(library2);
+		em.getIdUser().commit();
+		
+		/* Check whether enittiy is removed or not */
+		library2 = em.find(Library2.class, 1);
+		System.out.println("Employee after removal :- " + library2);
+ 
+		
+		
+    }
